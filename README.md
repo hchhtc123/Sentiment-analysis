@@ -1,0 +1,2 @@
+# Sentiment-analysis
+基于paddlehub使用百度预训练模型Ernie在4分类数据集simplifyweibo_4_moods上完成4分类情感分析模型搭建，并基于PyQt5完成细粒度情感分析模型的搭建。
