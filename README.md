@@ -22,6 +22,16 @@ https://aistudio.baidu.com/aistudio/projectdetail/1948134
 
 3.基于PyQt5完成GUI界面演示，支持单条和批量文本情感分类预测。
 
+GUI界面演示：
+
+单条文本情感分类预测
+
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/%E6%BC%94%E7%A4%BA%E8%8A%82%E7%9B%AE/%E5%8D%95%E6%9D%A1%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB.png)
+
+批量文本情感分类预测
+
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/%E6%BC%94%E7%A4%BA%E8%8A%82%E7%9B%AE/%E6%89%B9%E9%87%8F%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB.png)
+
 项目不足与后续提升规划：
 
 1.在4分类数据集上受数据噪声影响精度不高，后续将添加数据清洗操作和优化情感分类模型实现效果的提升。
