@@ -1,0 +1,8 @@
+simplifyweibo_4_moods数据集
+为在新浪微博上采集的36万条带情感标签的数据
+情感类别分为了喜悦、愤怒、厌恶、低落4个类别。
+
+详见：
+https://github.com/SophonPlus/ChineseNlpCorpus/blob/master/datasets/simplifyweibo_4_moods/intro.ipynb
+
+提供的data_processing.py为数据处理程序，对数据按类别8:1:1进行训练、验证和测试集的划分。
