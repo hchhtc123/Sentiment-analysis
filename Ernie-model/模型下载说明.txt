@@ -1,0 +1,9 @@
+由于模型参数较大，为方便下载故将其以数据集的形式挂载在AI Studio上。
+下载链接：https://aistudio.baidu.com/aistudio/datasetdetail/118859/0
+
+使用说明：
+下载解压后将model.pdparams移动至此目录下后即可。
+
+自定义模型训练细节可以查看：
+PaddleHub实战：基于OCEMOTION的中文微情感分析系统
+https://aistudio.baidu.com/aistudio/projectdetail/2211726
