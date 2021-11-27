@@ -1,0 +1,58 @@
+一.源码目录文件说明：
+1.BackEnd文件夹为后端服务模块，flaskr文件夹为基于Flask工厂模式搭建的后端API服务。主程序查看__init__.py文件。
+2.FrontEnd文件夹为前端界面模块，基于VUE+ElementUI组件搭建微情感分析平台前端页面模块，通过axios向后端API接口发送网络请求前后端联调。主程序查看App.vue文件。
+
+二.环境配置和运行说明：
+1.后端服务环境配置：
+
+下载Anaconda,推荐清华镜像地址：https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/
+注意根据自己电脑的型号选择版本进行下载，下载安装时记得勾选上添加环境变量
+
+建议先通过conda create创建一个虚拟环境便于管理
+例：
+// 创建python3.7版本的虚拟环境，此处设置环境名为paddle
+conda create –n paddle python=3.7
+// 进行创建的虚拟环境，注意后续再在该环境后完成项目全部环境配置。
+activate paddle
+
+// 设置清华源镜像加速
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --set show_channel_urls yes
+
+首先下载paddle，该部分建议根据官方文档（https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/pip/windows-pip.html）进行下载。GPU环境的话cuda和cudnn需要适配好，具体以官方给的文档为准！
+
+// 下载其他环境依赖包
+pip install paddlehub
+pip install flask
+pip install flask_cors
+pip install json
+
+完成环境配置操作后通过cd命令切换到BackEnd文件夹下，可以看到其下的flaskr文件夹。API服务搭建代码可以查看__init__.py文件。
+
+接下来启动Flask服务：
+set FLASK_APP=flaskr
+set FLASK_ENV=development
+flask run
+
+# 初始启动需要的时间较长些
+ps:注意项目默认使用的为cpu环境，若对性能要求较高可下载gpu版本的paddle并修改源码中__init__.py中use_gpu=True
+
+2.前端页面模块：
+该部分需要先下载node.js（到官网https://nodejs.org/zh-cn/download/进行下载即可)
+IDE上为便于调试推荐使用HBuilderX。
+
+进入FrontEnd文件夹：
+// 使用淘宝的镜像源加速
+npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
+npm info underscore
+
+// 运行项目：
+npm install 
+npm run dev
+成功打开后，访问http://localhost:3000/ ，即可打开微情感分析平台前端界面
+
+
+
+
