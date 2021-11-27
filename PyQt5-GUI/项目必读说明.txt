@@ -1,0 +1,65 @@
+一.项目环境配置：
+# 请先按照下面配置指南完成环境的配置操作后再运行本项目！
+
+# 首先你需要在本地下载好Anaconda！下载地址：https://mirror.tuna.tsinghua.edu.cn/help/anaconda/
+
+# 换清华源加速下载（不换源的话下载会比较慢）
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/
+conda config --set show_channel_urls yes
+
+# conda命令新建一个python版本为3.7的新环境，此处设置环境名为paddle
+conda create -n paddle python=3.7
+
+# 进入新建的环境，接下来将都在该环境内完成整个项目依赖库的下载
+activate paddle
+
+paddle下载请参加官网教程:https://www.paddlepaddle.org.cn/install/quick?docurl=/documentation/docs/zh/install/pip/windows-pip.html
+
+# eg:下载2.2 CPU版本的paddle
+python -m pip install paddlepaddle==2.2.0 -i https://mirror.baidu.com/pypi/simple
+# 若上面的pip下载命令失败，请使用conda下载命令
+conda install paddlepaddle==2.2.0 --channel https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/Paddle/
+# ps:需注意下载GPU版本的话，cuda和cudnn要适配好，具体以官方文档为准
+
+# 下载PaddleHub
+pip install -U paddlehub -i https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 下载Pyqt5
+pip install PyQt5
+
+# 下载1.2.0版本的xlrd包，主要便于处理excel文件
+pip install xlrd==1.2.0
+
+# 下载所需的其他依赖库
+pip install sentencepiece
+pip install openpyxl
+
+二.项目运行及具体使用说明：
+
+# 通过cd命令进入源码文件目录，运行可视化界面主程序：
+python gui.py
+
+# 单条情感分类界面：输入正文内容，完成输入后点击“单条情感分类”按钮即可完成预测。
+# 批量情感分类界面：点击“选择excel文件”按钮选择xlsx文件，需注意文件格式最好与提供的测试文件'text.xlsx'相统一下，context列。若需要更多的功能可以对gui.py中批量预测函数进行完善和补充。接着设置输出文件路径：输入文件名称、点击“选择输出文件夹”按钮选择要生成结果文件的导出路径。最后点击“进行批量情感分类"按钮即可完成批量预测！ 在大量文本预测时，界面会出现类卡死形式，耐心等待即可。 
+
+# ps: 默认使用了CPU环境，若本地已配置好了GPU环境可以修改gui.py中use_gpu为True进行提速！
+
+三.源码目录文件夹中各文件说明：
+
+1.“环境配置指南及使用说明.txt”文件讲述源码环境依赖的全部配置操作及项目具体使用说明，若需要运行源程序请务必按该说明进行操作！！！
+
+2.“resources”文件夹用于存放可视化界面所用到的资源图片：背景图、logo。
+
+3.“interface.py”为Qtdesigner设计界面UI后导出的可视化界面设计程序。
+
+4.“gui.py”，为主程序，在完成环境依赖配置后运行该程序即可运行本项目！
+
+5. “test.xlsx”，为进行批量情感分类预测演示的一个测试实例。
+
+AI Studio完整项目地址及教程：https://aistudio.baidu.com/aistudio/projectdetail/2211726，喜欢的希望fork、喜欢和关注三连哦！
+
+
+
+
