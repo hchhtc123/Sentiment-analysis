@@ -1,41 +1,39 @@
-# Sentiment-analysis
-项目简介：
-基于paddlehub使用百度预训练模型Ernie在4分类数据集simplifyweibo_4_moods上完成4分类情感分析模型搭建，并基于PyQt5完成细粒度情感分析模型的搭建。支持单条文本和批量导入excel文件进行情感分类预测，预测输出4个情感标签之一：喜悦、愤怒、厌恶、低落。
+# 中文微情感分析系统
+项目作者：炼丹师233
+AI Studio个人主页：https://aistudio.baidu.com/aistudio/personalcenter/thirdview/330406
 
-AI studio项目地址：
-基于Ernie的4分类情感分析系统
-https://aistudio.baidu.com/aistudio/projectdetail/1948134
+# 一.项目简介：
+本项目主要基于PaddleHub通过预训练模型Erine-tiny在中文7情感分类数据集OCEMOTION上进行微调训练从而实现较为精确的情感7分类任务：sadness、happiness、disgust、anger、like、surprise、fear。
+我们还基于PyQt5完成了项目可视化界面的开发，支持支持单条和批量文本细粒度情感分类预测。
+同时我们还完成了该项目前后端分离式的web端部署，所用技术栈：前端：Vue+Element UI；后端：Flask+PaddleHub。
+项目具有前沿性和广泛的应用价值，同时提供完整项目教程带你玩转一个完整项目的开发！
 
-具体环境配置及使用说明请下载查看项目目录结构中项目必读说明.txt文件。其中对模型训练和环境依赖配置均进行了详细的说明。
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/show_picture/%E6%8A%80%E6%9C%AF%E8%B7%AF%E7%BA%BF.png)
 
-研究意义：
+# 二.项目演示：
 
-在评论网站、论坛、博客和社交媒体中，可以获得大量表达意见的文本。而这些文本数据都是非结构化的，没有以预先定义的方式组织，数据量庞大通常难以分析、理解和分类，既费时又费钱。而在情感分析系统的帮助下，这种非结构化信息可以依靠自动化业务流程以有效且低成本的方式大规模转换为结构化数据，极大减少人工标注成本，提高效率。情感分析在舆情监控、话题监督、口碑分析等商业分析领域有着非常重要的应用价值。目前该技术也已有着较广泛的应用，例如新浪微博运用情感分析对全网数据进行挖掘构建舆情大数据平台。电商平台运用情感分析来进行商品评论挖掘，作为推荐系统的一部分提高营销效果。小度机器人通过识别用户在聊天中的情绪，帮助选择出更匹配用户情绪的文本进行回复。在不远的未来，情感分析也将成为现代公司不可或缺的工具。
+## 2.1 PyQt5 GUI界面：
+### 项目演示视频：https://www.bilibili.com/video/BV1944y1C7FQ/
+### 单条文本预测：
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/show_picture/GUI-%E5%8D%95%E6%9D%A1%E9%A2%84%E6%B5%8B.png)
+### 批量文本预测：
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/show_picture/GUI-%E6%89%B9%E9%87%8F%E9%A2%84%E6%B5%8B.png)
 
-但目前情感分析仍然局限于有限的简单分类主要为2分类，而有限的情感分类并不能很好地挖掘文本中包含的微情感，不能很好地满足需求。故细粒度的情感分析研究具有前沿性和更广泛的应用价值。
+## 2.2 前后端分离式Web端：
+### 项目演示视频：https://www.bilibili.com/video/BV1R44y1v7Dh/
+### 界面演示：
+![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/show_picture/web-%E9%A2%84%E6%B5%8B.png)
 
-项目主要工作和亮点：
 
-1.不同于传统的2分类模型，本次使用了4分类数据集simplifyweibo_4_moods，并对其进行简单的处理与数据划分，可以达到更细粒度的情感分析，从而可以更好分析用户评论中蕴含情感。
+# 三.项目运行说明：
+项目主目录分为Ernie-model、PyQt5-GUI、webproject三大文件夹。
+1.Ernie-model存放训练好的模型参数，训练细节查看https://aistudio.baidu.com/aistudio/projectdetail/2211726。
+2.PyQt5-GUI为基于PyQt5构建的可视化界面，该模块运行查看对应目录提供的'项目必读说明.txt'文件。
+3.webproject为项目的web端部署，分为FrontEnd和BackEnd即前端界面和后端服务两大模块，该模块运行同样查看对应目录提供的"项目必读说明.txt"文件。
 
-2.使用预训练模型Erine完成情感分析模型的搭建。基于大规模未标注语料库的预训练模型（Pretrained Models, PTM) 能够习得通用的语言表示，将预训练模型Fine-tune到下游任务，能够获得比传统分类模型Lstm等更出色的表现。
+# 四.AI Studio项目地址及教程：
+ 1.PaddleHub实战：基于OCEMOTION的中文微情感分析系统
+ https://aistudio.baidu.com/aistudio/projectdetail/2211726
 
-3.基于PyQt5完成GUI界面演示，支持单条和批量文本情感分类预测。
-
-GUI界面演示：
-
-单条文本情感分类预测
-
-![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/%E6%BC%94%E7%A4%BA%E8%8A%82%E7%9B%AE/%E5%8D%95%E6%9D%A1%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB.png)
-
-批量文本情感分类预测
-
-![image](https://github.com/hchhtc123/Sentiment-analysis/blob/main/%E6%BC%94%E7%A4%BA%E8%8A%82%E7%9B%AE/%E6%89%B9%E9%87%8F%E6%96%87%E6%9C%AC%E6%83%85%E6%84%9F%E5%88%86%E7%B1%BB.png)
-
-项目不足与后续提升规划：
-
-1.在4分类数据集上受数据噪声影响精度不高，后续将添加数据清洗操作和优化情感分类模型实现效果的提升。
-
-2.只能实现简单4分类，后续将考虑使用更细粒度的数据集，如SMP2020微博情绪分类比赛数据集（详见官网http://39.97.118.137/ ）实现更细粒度的情感分类。
-
-3.只基于PyQt5完成了简易界面的演示，后续将考虑基于paddle的快速部署并基于flask框架完成一个完整的前后端分离项目。
+ 2.前后端分离式NLP微情感分析平台
+ https://aistudio.baidu.com/aistudio/projectdetail/2507681
